@@ -5,6 +5,7 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+
 -- Remap leader key
 keymap("", ",", "<Nop>", opts)
 vim.g.mapleader = ","
