@@ -5,7 +5,6 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-
 -- Remap leader key
 keymap("", ",", "<Nop>", opts)
 vim.g.mapleader = ","
@@ -82,10 +81,10 @@ keymap("n", "<F3>", ":e .<cr>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 keymap(
-  "n",
-  "<F6>",
-  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-  opts
+	"n",
+	"<F6>",
+	[[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
+	opts
 )
 keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
 keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
@@ -93,10 +92,10 @@ keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap(
-  "n",
-  "<C-p>",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  opts
+	"n",
+	"<C-p>",
+	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	opts
 )
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
@@ -113,15 +112,15 @@ keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 -- Change '<CR>' to whatever shortcut you like :)
 vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })
-vim.api.nvim_set_keymap(
-  "n",
-  "=",
-  "<cmd>JABSOpen<cr>",
-  { noremap = true, silent = true, nowait = true }
-)
+vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap(
+	"n",
+	"<leader>f",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
+)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
