@@ -2,12 +2,24 @@
 
 ## Try out this config
 
+
+Prerequirements:
+```
+brew install fortune
+cargo install stylua
+```
+
 Make sure to remove or move your current `nvim` directory
 
 ```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
-```
+git clone https://github.com/andriisoldatenko/nvim ~/fan/nvim
 
+# backup your current nvim
+
+brew install stow
+
+stow nvim -t $HOME/.config/nvim/
+```
 Run `nvim` and wait for the plugins to be installed 
 
 
