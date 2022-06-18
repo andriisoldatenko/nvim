@@ -53,27 +53,22 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 
+	use("goolord/alpha-nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("folke/which-key.nvim")
+	use("ahmedkhalf/project.nvim")
+	use("lewis6991/impatient.nvim")
 
-  use("goolord/alpha-nvim")
-  use("lukas-reineke/indent-blankline.nvim")
-  use("folke/which-key.nvim")
+	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
-  --
-  -- use "ahmedkhalf/project.nvim"
-  -- use "lewis6991/impatient.nvim"
-  -- use "lukas-reineke/indent-blankline.nvim"
-  -- use "goolord/alpha-nvim"
-  -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-
-
-  -- from old vimrc
-  -- TODO: need revist
-  -- use "inkarkat/vim-ReplaceWithRegister"
-  -- use "tpope/vim-abolish"
-  -- use "tpope/vim-surround"
-  -- use "tpope/vim-repeat"
-  -- use "kana/vim-textobj-user"
-  -- use "beloglazov/vim-textobj-quotes"
+	-- from old vimrc
+	-- TODO: need revist
+	-- use "inkarkat/vim-ReplaceWithRegister"
+	-- use "tpope/vim-abolish"
+	-- use "tpope/vim-surround"
+	-- use "tpope/vim-repeat"
+	-- use "kana/vim-textobj-user"
+	-- use "beloglazov/vim-textobj-quotes"
 
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
@@ -110,7 +105,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-  
+
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
