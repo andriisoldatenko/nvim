@@ -43,7 +43,7 @@ return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("nvim-lua/plenary.nvim") -- Useful lua fuctwions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
@@ -60,15 +60,10 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-
-	-- from old vimrc
-	-- TODO: need revist
-	-- use "inkarkat/vim-ReplaceWithRegister"
-	-- use "tpope/vim-abolish"
-	-- use "tpope/vim-surround"
-	-- use "tpope/vim-repeat"
-	-- use "kana/vim-textobj-user"
-	-- use "beloglazov/vim-textobj-quotes"
+	use("tpope/vim-abolish")
+	use("tpope/vim-surround")
+	use("tpope/vim-repeat")
+	use("inkarkat/vim-ReplaceWithRegister")
 
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
@@ -115,6 +110,9 @@ return packer.startup(function(use)
 
 	-- Vim text objects
 	use({ "beloglazov/vim-textobj-quotes", requires = "kana/vim-textobj-user" })
+
+	-- plugin that peeks lines of the buffer in non-obtrusive way.
+	use("nacro90/numb.nvim")
 
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
