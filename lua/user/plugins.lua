@@ -110,6 +110,9 @@ return packer.startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	})
 
+	-- Enables Vim to process line and column jump specifications in file paths
+	use("wsdjeg/vim-fetch")
+
 	-- Vim text objects
 	use({ "beloglazov/vim-textobj-quotes", requires = "kana/vim-textobj-user" })
 
