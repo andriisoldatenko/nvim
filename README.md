@@ -32,3 +32,8 @@ Open `nvim` and enter the following:
 ```
 :checkhealth
 ```
+
+Migrate existing plugins to lua:
+
+TODO:
+- [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim)

@@ -107,6 +107,10 @@ local mappings = {
 	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		B = {
+			"<cmd>lua require 'gitlinker'.get_repo_url({action_callback = require 'gitlinker.actions'.open_in_browser})<cr>",
+			"Open repo in browser",
+		},
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
