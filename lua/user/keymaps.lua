@@ -114,15 +114,6 @@ keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>')
 vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap(
-	"n",
-	"<leader>f",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 

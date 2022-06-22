@@ -105,10 +105,13 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-  use {
-    'ruifm/gitlinker.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-}
+	use({
+		"ruifm/gitlinker.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
+
+	-- Vim text objects
+	use({ "beloglazov/vim-textobj-quotes", requires = "kana/vim-textobj-user" })
 
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
