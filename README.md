@@ -36,4 +36,8 @@ Open `nvim` and enter the following:
 Migrate existing plugins to lua:
 
 TODO:
-- [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim)
+- [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim).
+- [x] highlight line number when chnage line.
+- [ ] Add Ack search.
+- [ ] https://github.com/folke/trouble.nvim.
+- [ ] https://github.com/wellle/targets.vim

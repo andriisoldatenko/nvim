@@ -115,7 +115,7 @@ vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true,
 vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 
 -- gitlinker
 keymap(
