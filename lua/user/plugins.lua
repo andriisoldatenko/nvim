@@ -52,6 +52,8 @@ return packer.startup(function(use)
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
+	use("ThePrimeagen/harpoon")
+	use("MattesGroeger/vim-bookmarks")
 
 	use("goolord/alpha-nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -88,6 +90,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
+	use("tom-anders/telescope-vim-bookmarks.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 
 	--- Treesitter
