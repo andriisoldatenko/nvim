@@ -110,6 +110,7 @@ return packer.startup(function(use)
 		"ruifm/gitlinker.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
+	use("f-person/git-blame.nvim")
 
 	-- Enables Vim to process line and column jump specifications in file paths
 	use("wsdjeg/vim-fetch")
