@@ -67,6 +67,8 @@ return packer.startup(function(use)
 	use("tpope/vim-repeat")
 	use("inkarkat/vim-ReplaceWithRegister")
 
+	use("ghillb/cybu.nvim")
+
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
 
