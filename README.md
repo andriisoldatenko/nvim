@@ -38,6 +38,10 @@ Migrate existing plugins to lua:
 TODO:
 - [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim).
 - [x] highlight line number when chnage line.
-- [ ] Add Ack search.
+https://github.com/folke/todo-comments.nvim
+https://github.com/phaazon/hop.nvim
 - [ ] https://github.com/folke/trouble.nvim.
 - [ ] https://github.com/wellle/targets.vim
+https://github.com/mileszs/ack.vim
+- [ ] Add Ack search.
+

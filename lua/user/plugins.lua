@@ -54,7 +54,7 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("ThePrimeagen/harpoon")
 	use("MattesGroeger/vim-bookmarks")
-
+  use("folke/todo-comments.nvim")
 	use("goolord/alpha-nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/which-key.nvim")
