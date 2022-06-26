@@ -38,19 +38,6 @@ local mode_color = {
 	t = "#D7BA7D",
 }
 
-local mode = {
-	-- mode component
-	function()
-		return "▊"
-	end,
-	color = function()
-		-- auto change color according to neovims mode
-		return { fg = mode_color[vim.fn.mode()] }
-	end,
-	-- padding = { right = 1 },
-	padding = 0,
-}
-
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
@@ -74,13 +61,6 @@ local diff = {
 	cond = hide_in_width,
 	separator = "%#SLSeparator#" .. "│ " .. "%*",
 }
-
--- local mode = {
---   "mode",
---   fmt = function(str)
---     return "-- " .. str .. " --"
---   end,
--- }
 
 local filetype = {
 	"filetype",
@@ -166,7 +146,6 @@ lualine.setup({
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
-		-- theme = "auto",
 		theme = theme,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
@@ -174,10 +153,9 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { mode, branch },
+		lualine_a = { "mode", branch },
 		lualine_b = { diagnostics },
 		lualine_c = { { current_signature, cond = hide_in_width } },
-		-- lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_x = { diff, spaces, filetype },
 		lualine_y = { progress },
 		lualine_z = { location },

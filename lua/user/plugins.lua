@@ -123,6 +123,7 @@ return packer.startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	})
 	use("f-person/git-blame.nvim")
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Enables Vim to process line and column jump specifications in file paths
 	use("wsdjeg/vim-fetch")
