@@ -62,6 +62,8 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use({ "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" })
 	use("christianchiarulli/hop.nvim")
+	use("windwp/nvim-spectre")
+	use("tversteeg/registers.nvim")
 	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 	use("tpope/vim-abolish")
 	use("tpope/vim-surround")
@@ -91,6 +93,7 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("simrat39/symbols-outline.nvim")
+	use("ray-x/lsp_signature.nvim")
 	use({
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
