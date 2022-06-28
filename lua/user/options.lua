@@ -33,7 +33,9 @@ local options = {
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
-	foldlevel = 20,
+	-- foldlevel = 20,
+	foldmethod = "expr",
+	foldexpr = "nvim_treesitter#foldexpr()",
 }
 
 vim.opt.shortmess:append("c")
@@ -42,8 +44,8 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.cmd("set foldmethod=expr")
-vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
+-- vim.cmd("set foldmethod=expr")
+-- vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
