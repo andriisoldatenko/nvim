@@ -35,6 +35,11 @@ Open `nvim` and enter the following:
 
 Migrate existing plugins to lua:
 
+
+### Spelling
+
+More details you can find [here](https://neovim.io/doc/user/spell.html)
+
 TODO:
 - [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim).
 - [x] highlight line number when chnage line.
