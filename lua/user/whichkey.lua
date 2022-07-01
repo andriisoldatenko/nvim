@@ -187,6 +187,28 @@ local mappings = {
 		},
 	},
 
+	L = {
+		name = "Rust",
+		t = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Hints" },
+		r = { "<cmd>RustRunnables<Cr>", "Runnables" },
+		m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
+		c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
+		p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
+		-- j = { "<cmd>RustJoinLines<Cr>", "Join Lines" },
+		-- s = { "<cmd>RustStartStandaloneServerForBuffer<Cr>", "Start Server Buf" },
+		d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
+		v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
+		R = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
+		-- S = { "<cmd>RustSSR<Cr>", "SSR" },
+		-- o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
+		-- h = { "<cmd>RustSetInlayHints<Cr>", "Enable Hints" },
+		-- H = { "<cmd>RustDisableInlayHints<Cr>", "Disable Hints" },
+		-- a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
+		-- a = { "<cmd>RustHoverRange<Cr>", "Hover Range" },
+		-- j = { "<cmd>RustMoveItemDown<Cr>", "Move Item Down" },
+		-- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
+	},
+
 	s = {
 		name = "Split",
 		s = { "<cmd>split<cr>", "HSplit" },

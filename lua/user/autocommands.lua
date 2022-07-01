@@ -83,7 +83,7 @@ vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTre
 --   end,
 -- })
 
-vim.cmd("autocmd BufEnter,BufReadPost,FileReadPost * normal zR")
+-- vim.cmd("autocmd BufEnter,BufReadPost,FileReadPost * normal zR")
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	callback = function()

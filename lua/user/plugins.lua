@@ -66,12 +66,12 @@ return packer.startup(function(use)
 	use("windwp/nvim-spectre")
 	use("tversteeg/registers.nvim")
 	use("karb94/neoscroll.nvim")
-	use("RRethy/vim-illuminate")
 	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 	use("tpope/vim-abolish")
 	use("tpope/vim-surround")
 	use("tpope/vim-repeat")
 	use("inkarkat/vim-ReplaceWithRegister")
+	use("godlygeek/tabular")
 
 	use("ghillb/cybu.nvim")
 
@@ -101,6 +101,10 @@ return packer.startup(function(use)
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	})
+	use("RRethy/vim-illuminate")
+
+	-- Rust
+	use("simrat39/rust-tools.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
