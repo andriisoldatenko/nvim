@@ -25,6 +25,15 @@ configs.setup({
 		-- colors = {}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
+	textsubjects = {
+		enable = true,
+		prev_selection = ",", -- (Optional) keymap to select the previous selection
+		keymaps = {
+			["."] = "textsubjects-smart",
+			[";"] = "textsubjects-container-outer",
+			["i;"] = "textsubjects-container-inner",
+		},
+	},
 	textobjects = {
 		select = {
 			enable = true,
@@ -36,8 +45,19 @@ configs.setup({
 				-- You can use the capture groups defined in textobjects.scm
 				["af"] = "@function.outer",
 				["if"] = "@function.inner",
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
 				["ac"] = "@class.outer",
 				["ic"] = "@class.inner",
+			},
+		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>A"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>AA"] = "@parameter.inner",
 			},
 		},
 		move = {
