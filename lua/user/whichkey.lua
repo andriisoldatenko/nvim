@@ -229,7 +229,15 @@ local mappings = {
 			"Find files",
 		},
 		g = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Test" },
+		s = {
+			"<cmd>Telescope grep_string theme=ivy<cr>",
+			"Searches for the string under your cursor in your current working directory",
+		},
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		gf = {
+			"<cmd>Telescope git_files<cr>",
+			"Fuzzy search through the output of git ls-files command, respects .gitignore, optionally ignores untracked files",
+		},
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
