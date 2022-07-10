@@ -121,6 +121,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use("RRethy/nvim-treesitter-textsubjects")
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

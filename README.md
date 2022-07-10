@@ -60,3 +60,16 @@ TODO:
 - [ ] review lazy loading https://github.com/NvChad/NvChad
 - [ ] review https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#highlight-symbol-under-cursor
 - [ ] review https://github.com/Civitasv/runvim
+- [ ] https://github.com/luukvbaal/stabilize.nvim
+- [ ] https://github.com/drybalka/tree-climber.nvim
+- [ ] https://github.com/rmagatti/auto-session
+- [ ] https://github.com/lalitmee/browse.nvim
+- [ ] https://github.com/Saecki/crates.nvim (Rust)
+- [ ] https://github.com/gbprod/cutlass.nvim
+- [ ] https://github.com/monaqa/dial.nvim
+- [ ] stevearc/dressing.nvim
+- [ ] https://github.com/j-hui/fidget.nvim
+- [ ] https://github.com/unblevable/quick-scope
+- [ ] https://github.com/tiagovla/scope.nvim
+- [ ] https://github.com/stevearc/stickybuf.nvim
+- [ ] https://github.com/abecodes/tabout.nvim
