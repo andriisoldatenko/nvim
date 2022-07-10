@@ -73,3 +73,8 @@ TODO:
 - [ ] https://github.com/tiagovla/scope.nvim
 - [ ] https://github.com/stevearc/stickybuf.nvim
 - [ ] https://github.com/abecodes/tabout.nvim
+
+
+
+
+Usually and
