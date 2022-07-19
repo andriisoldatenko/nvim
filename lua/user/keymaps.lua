@@ -130,3 +130,7 @@ keymap(
 	'<cmd>lua require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
 	{}
 )
+
+-- copy reference
+keymap("n", "<leader>y", ":let @+=expand('%') . ':' . line('.')<CR>", opts)
+keymap("n", "<leader>yy", ":let @+=expand('%:p')", opts)
