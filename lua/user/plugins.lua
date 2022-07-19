@@ -72,7 +72,7 @@ return packer.startup(function(use)
 	use("tpope/vim-repeat")
 	use("inkarkat/vim-ReplaceWithRegister")
 	use("godlygeek/tabular")
-
+	use("NvChad/nvim-colorizer.lua")
 	use("ghillb/cybu.nvim")
 
 	-- Colorschemes
