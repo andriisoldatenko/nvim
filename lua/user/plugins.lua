@@ -106,6 +106,13 @@ return packer.startup(function(use)
 	-- Rust
 	use("simrat39/rust-tools.nvim")
 
+	-- Fzf
+	use({
+		"ibhagwan/fzf-lua",
+		-- optional for icon support
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
+
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("tom-anders/telescope-vim-bookmarks.nvim")

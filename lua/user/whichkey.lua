@@ -105,10 +105,6 @@ local m_mappings = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -222,6 +218,14 @@ local mappings = {
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
 
+	b = {
+		name = "FZF",
+		f = {
+			"<cmd>:FzfLua files<cr>",
+			"Files",
+		},
+	},
+
 	f = {
 		name = "Search",
 		f = {
@@ -233,7 +237,11 @@ local mappings = {
 			"<cmd>Telescope grep_string theme=ivy<cr>",
 			"Searches for the string under your cursor in your current working directory",
 		},
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		b = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+		gb = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		gf = {
 			"<cmd>Telescope git_files<cr>",
 			"Fuzzy search through the output of git ls-files command, respects .gitignore, optionally ignores untracked files",

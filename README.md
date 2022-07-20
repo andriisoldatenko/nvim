@@ -73,7 +73,8 @@ TODO:
 - [ ] https://github.com/tiagovla/scope.nvim
 - [ ] https://github.com/stevearc/stickybuf.nvim
 - [ ] https://github.com/abecodes/tabout.nvim
-
+- [ ] https://github.com/ibhagwan/fzf-lua
+- [ ] https://github.com/kevinhwang91/nvim-bqf
 
 
 
