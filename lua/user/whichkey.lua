@@ -205,10 +205,23 @@ local mappings = {
 		-- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
 	},
 
+	-- s = {
+	-- 	name = "Split",
+	-- 	s = { "<cmd>split<cr>", "HSplit" },
+	-- 	v = { "<cmd>vsplit<cr>", "VSplit" },
+	-- },
+
 	s = {
-		name = "Split",
-		s = { "<cmd>split<cr>", "HSplit" },
-		v = { "<cmd>vsplit<cr>", "VSplit" },
+		name = "Session",
+		s = { "<cmd>SaveSession<cr>", "Save" },
+		r = { "<cmd>RestoreSession<cr>", "Restore" },
+		x = { "<cmd>DeleteSession<cr>", "Delete" },
+		f = { "<cmd>Autosession search<cr>", "Find" },
+		d = { "<cmd>Autosession delete<cr>", "Find Delete" },
+		-- a = { ":SaveSession<cr>", "test" },
+		-- a = { ":RestoreSession<cr>", "test" },
+		-- a = { ":RestoreSessionFromFile<cr>", "test" },
+		-- a = { ":DeleteSession<cr>", "test" },
 	},
 
 	r = {
@@ -224,6 +237,15 @@ local mappings = {
 			"<cmd>:FzfLua files<cr>",
 			"Files",
 		},
+	},
+
+	B = {
+		name = "Browse",
+		i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
+		b = { "<cmd>Browse<cr>", "Browse" },
+		d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
+		f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
+		m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
 	},
 
 	f = {

@@ -74,6 +74,8 @@ return packer.startup(function(use)
 	use("godlygeek/tabular")
 	use("NvChad/nvim-colorizer.lua")
 	use("ghillb/cybu.nvim")
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
@@ -118,6 +120,7 @@ return packer.startup(function(use)
 	use("tom-anders/telescope-vim-bookmarks.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use("lalitmee/browse.nvim")
 
 	--- Treesitter
 	use({
@@ -129,6 +132,7 @@ return packer.startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use("RRethy/nvim-treesitter-textsubjects")
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("drybalka/tree-climber.nvim")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
