@@ -1,4 +1,3 @@
-
 local servers = {
   "html",
   "jsonls",
@@ -45,11 +44,6 @@ for _, server in pairs(servers) do
 
   server = vim.split(server, "@")[1]
 
-  if server == "jsonls" then
-    local jsonls_opts = require "user.lsp.settings.jsonls"
-    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-  end
-
   if server == "yamlls" then
     local yamlls_opts = require "user.lsp.settings.yamlls"
     opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
@@ -84,6 +78,21 @@ for _, server in pairs(servers) do
   if server == "pyright" then
     local pyright_opts = require "user.lsp.settings.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  end
+
+  if server == "solc" then
+    local solc_opts = require "user.lsp.settings.solc"
+    opts = vim.tbl_deep_extend("force", solc_opts, opts)
+  end
+
+  if server == "emmet_ls" then
+    local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
+    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
+
+  if server == "zk" then
+    local zk_opts = require "user.lsp.settings.zk"
+    opts = vim.tbl_deep_extend("force", zk_opts, opts)
   end
 
   if server == "rust_analyzer" then

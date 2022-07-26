@@ -286,6 +286,8 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+
+	v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
 }
 
 which_key.setup(setup)

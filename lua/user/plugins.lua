@@ -31,19 +31,27 @@ end
 
 -- Have packer use a popup window
 packer.init({
+	snapshot_path = fn.stdpath("config") .. "/snapshots",
+	max_jobs = 50,
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
 		end,
+		prompt_border = "rounded", -- Border style of prompt popups.
 	},
 })
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
+	-- Plugin Mangager
 	use("wbthomason/packer.nvim") -- Have packer manage itself
+
+	-- Lua Development
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua fuctwions used ny lots of plugins
+	use("christianchiarulli/lua-dev.nvim")
+
+	-- Plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
@@ -101,14 +109,17 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
-	use({
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	})
+	-- use({
+	-- 	"folke/trouble.nvim",
+	-- 	cmd = "TroubleToggle",
+	-- })
+	use("b0o/SchemaStore.nvim")
+
 	use("RRethy/vim-illuminate")
 	use("SmiteshP/nvim-navic")
 	use("j-hui/fidget.nvim")
-	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
+	--use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
+	use({ "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" })
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Rust
