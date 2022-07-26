@@ -95,7 +95,9 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	-- use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("simrat39/symbols-outline.nvim")
 	use("ray-x/lsp_signature.nvim")
@@ -104,6 +106,10 @@ return packer.startup(function(use)
 		cmd = "TroubleToggle",
 	})
 	use("RRethy/vim-illuminate")
+	use("SmiteshP/nvim-navic")
+	use("j-hui/fidget.nvim")
+	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
+	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Rust
 	use("simrat39/rust-tools.nvim")
@@ -130,7 +136,7 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
-	use("RRethy/nvim-treesitter-textsubjects")
+	-- use("RRethy/nvim-treesitter-textsubjects")
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("drybalka/tree-climber.nvim")
 

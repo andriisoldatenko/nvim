@@ -3,6 +3,7 @@ require("user.plugins")
 require("user.autocommands")
 require("user.colorscheme")
 require("user.cmp")
+-- require "user.lsp-inlayhints"
 require("user.lsp")
 require("user.telescope")
 require("user.browse")
