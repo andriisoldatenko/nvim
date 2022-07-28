@@ -123,7 +123,7 @@ return packer.startup(function(use)
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Rust
-	use("simrat39/rust-tools.nvim")
+  use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
 
 	-- Fzf
 	use({
