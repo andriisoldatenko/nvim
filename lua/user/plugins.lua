@@ -51,6 +51,22 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua fuctwions used ny lots of plugins
 	use("christianchiarulli/lua-dev.nvim")
 
+	-- LSP
+	use("neovim/nvim-lspconfig") -- enable LSP
+	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("ray-x/lsp_signature.nvim")
+	use("SmiteshP/nvim-navic")
+	use("simrat39/symbols-outline.nvim")
+	use("b0o/SchemaStore.nvim")
+	-- use "github/copilot.vim"
+	use("RRethy/vim-illuminate")
+	use("j-hui/fidget.nvim")
+	use({ "andriisoldatenko/lsp-inlayhints.nvim", branch = "readme" })
+	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
+
 	-- Plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
@@ -89,41 +105,21 @@ return packer.startup(function(use)
 	use("ishan9299/nvim-solarized-lua")
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+	use("christianchiarulli/nvim-cmp")
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-	-- LSP
-	-- use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("simrat39/symbols-outline.nvim")
-	use("ray-x/lsp_signature.nvim")
-	-- use({
-	-- 	"folke/trouble.nvim",
-	-- 	cmd = "TroubleToggle",
-	-- })
-	use("b0o/SchemaStore.nvim")
-
-	use("RRethy/vim-illuminate")
-	use("SmiteshP/nvim-navic")
-	use("j-hui/fidget.nvim")
-	--use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
-	use({ "christianchiarulli/lsp-inlayhints.nvim", branch = "user-config" })
-	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
-
 	-- Rust
-  use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
+	use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
 
 	-- Fzf
 	use({
