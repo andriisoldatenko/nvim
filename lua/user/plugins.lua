@@ -64,7 +64,7 @@ return packer.startup(function(use)
 	-- use "github/copilot.vim"
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
-	use({ "andriisoldatenko/lsp-inlayhints.nvim", branch = "readme" })
+	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Plugins
