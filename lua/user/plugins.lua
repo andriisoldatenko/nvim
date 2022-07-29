@@ -90,6 +90,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-spectre")
 	use("tversteeg/registers.nvim")
 	use("karb94/neoscroll.nvim")
+	use("junegunn/vim-slash")
 	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 	use("tpope/vim-abolish")
 	use("tpope/vim-surround")
