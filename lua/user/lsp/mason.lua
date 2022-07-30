@@ -8,7 +8,8 @@ local servers = {
   "bashls",
   "clangd",
   "rust_analyzer",
-  "taplo"
+  "taplo",
+  "gopls"
 }
 
 local settings = {
@@ -94,6 +95,11 @@ for _, server in pairs(servers) do
   if server == "zk" then
     local zk_opts = require "user.lsp.settings.zk"
     opts = vim.tbl_deep_extend("force", zk_opts, opts)
+  end
+
+  if server == "gopls" then
+    local gopls_opts = require "user.lsp.settings.gopls"
+    opts = vim.tbl_deep_extend("force", gopls_opts, opts)
   end
 
   if server == "rust_analyzer" then
