@@ -74,7 +74,6 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("ThePrimeagen/harpoon")
 	use("MattesGroeger/vim-bookmarks")
@@ -104,6 +103,9 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
+
+	-- Status line
+	use("nvim-lualine/lualine.nvim")
 
 	-- cmp plugins
 	use("christianchiarulli/nvim-cmp")
