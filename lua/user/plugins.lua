@@ -31,26 +31,49 @@ end
 
 -- Have packer use a popup window
 packer.init({
+	snapshot_path = fn.stdpath("config") .. "/snapshots",
+	max_jobs = 50,
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
 		end,
+		prompt_border = "rounded", -- Border style of prompt popups.
 	},
 })
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
+	-- Plugin Mangager
 	use("wbthomason/packer.nvim") -- Have packer manage itself
+
+	-- Lua Development
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua fuctwions used ny lots of plugins
+	use("christianchiarulli/lua-dev.nvim")
+
+	-- LSP
+	use("neovim/nvim-lspconfig") -- enable LSP
+	-- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("ray-x/lsp_signature.nvim")
+	use("SmiteshP/nvim-navic")
+	use("simrat39/symbols-outline.nvim")
+	use("b0o/SchemaStore.nvim")
+	-- use "github/copilot.vim"
+	use("RRethy/vim-illuminate")
+	use("j-hui/fidget.nvim")
+	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
+	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
+
+	-- Plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("ThePrimeagen/harpoon")
 	use("MattesGroeger/vim-bookmarks")
@@ -66,6 +89,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-spectre")
 	use("tversteeg/registers.nvim")
 	use("karb94/neoscroll.nvim")
+	use("junegunn/vim-slash")
 	-- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 	use("tpope/vim-abolish")
 	use("tpope/vim-surround")
@@ -80,33 +104,25 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
 
+	-- Status line
+	use("nvim-lualine/lualine.nvim")
+
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip")
+	use("christianchiarulli/nvim-cmp")
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("simrat39/symbols-outline.nvim")
-	use("ray-x/lsp_signature.nvim")
-	use({
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	})
-	use("RRethy/vim-illuminate")
-
 	-- Rust
-	use("simrat39/rust-tools.nvim")
+	use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
 
 	-- Fzf
 	use({
@@ -130,7 +146,7 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
-	use("RRethy/nvim-treesitter-textsubjects")
+	-- use("RRethy/nvim-treesitter-textsubjects")
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("drybalka/tree-climber.nvim")
 

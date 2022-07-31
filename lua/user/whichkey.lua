@@ -29,7 +29,7 @@ local setup = {
 	key_labels = {
 		-- override the label used to display some keys. It doesn't effect WK in any other way.
 		-- For example:
-		-- ["<space>"] = "SPC",
+		["<space>"] = "SPC",
 		-- ["<cr>"] = "RET",
 		-- ["<tab>"] = "TAB",
 	},
@@ -57,7 +57,7 @@ local setup = {
 	},
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-	show_help = true, -- show help message on the command line when the popup is visible
+	show_help = false, -- show help message on the command line when the popup is visible
 	triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
@@ -88,9 +88,9 @@ local m_opts = {
 }
 
 local m_mappings = {
-	a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
-	c = { "<cmd>BookmarkClear<cr>", "Clear" },
-	m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+	a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
+	c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
+	m = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
 	h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
 	j = { "<cmd>BookmarkNext<cr>", "Next" },
 	k = { "<cmd>BookmarkPrev<cr>", "Prev" },
@@ -104,12 +104,13 @@ local m_mappings = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
+	-- b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+  n = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	w = { "<cmd>w<CR>", "Save" },
+	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
 	p = {
 		name = "Packer",
@@ -151,58 +152,37 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		-- d = {
-		-- 	"<cmd>Telescope lsp_document_diagnostics<cr>",
-		-- 	"Document Diagnostics",
-		-- },
+    c = { "<cmd>lua require('user.lsp').server_capabilities()<cr>", "Get Capabilities" },
 		d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
 		w = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    ["fm"] = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+    F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
+    h = { "<cmd>IlluminationToggle<cr>", "Toggle Doc HL" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			"Next Diagnostic",
-		},
-		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			"Prev Diagnostic",
-		},
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+      "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
+      "Next Diagnostic",
+    },
+    k = {
+      "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+      "Prev Diagnostic",
+    },
+    v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
+    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+		R = { "<cmd>TroubleToggle lsp_references<cr>", "Trouble references" },
+    f = {"<cmd>lua vim.lsp.buf.references()<CR>", "References"},
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-	},
-
-	L = {
-		name = "Rust",
-		t = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Hints" },
-		r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-		m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-		c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
-		p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-		-- j = { "<cmd>RustJoinLines<Cr>", "Join Lines" },
-		-- s = { "<cmd>RustStartStandaloneServerForBuffer<Cr>", "Start Server Buf" },
-		d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
-		v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
-		R = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
-		-- S = { "<cmd>RustSSR<Cr>", "SSR" },
-		-- o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
-		-- h = { "<cmd>RustSetInlayHints<Cr>", "Enable Hints" },
-		-- H = { "<cmd>RustDisableInlayHints<Cr>", "Disable Hints" },
-		-- a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
-		-- a = { "<cmd>RustHoverRange<Cr>", "Hover Range" },
-		-- j = { "<cmd>RustMoveItemDown<Cr>", "Move Item Down" },
-		-- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
 	},
 
 	-- s = {
@@ -286,6 +266,8 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+
+	v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
 }
 
 which_key.setup(setup)

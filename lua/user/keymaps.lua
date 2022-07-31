@@ -134,3 +134,4 @@ keymap(
 -- copy reference
 keymap("n", "<leader>y", ":let @+=expand('%') . ':' . line('.')<CR>", opts)
 keymap("n", "<leader>yy", ":let @+=expand('%:p')", opts)
+keymap("n", "<m-v>", "<cmd>lua require('lsp_lines').toggle()<cr>", opts)
