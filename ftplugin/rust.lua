@@ -26,6 +26,7 @@ local mappings = {
     -- s = { "<cmd>RustStartStandaloneServerForBuffer<Cr>", "Start Server Buf" },
     d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
     v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
+    b = { "<cmd>RustRun<Cr>", "Run" },
     R = {
       "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
       "Reload Workspace",

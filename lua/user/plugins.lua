@@ -59,12 +59,12 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("ray-x/lsp_signature.nvim")
 	use("SmiteshP/nvim-navic")
-	use("simrat39/symbols-outline.nvim")
+	use({"simrat39/symbols-outline.nvim", branch = "rework"})
 	use("b0o/SchemaStore.nvim")
 	-- use "github/copilot.vim"
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
-	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
+	use({ "lvimuser/lsp-inlayhints.nvim"})
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Plugins
@@ -98,8 +98,8 @@ return packer.startup(function(use)
 	use("godlygeek/tabular")
 	use("NvChad/nvim-colorizer.lua")
 	use("ghillb/cybu.nvim")
-	use("rmagatti/auto-session")
-	use("rmagatti/session-lens")
+	--[[ use("rmagatti/auto-session") ]]
+	--[[ use("rmagatti/session-lens") ]]
 
 	-- Colorschemes
 	use("ishan9299/nvim-solarized-lua")
