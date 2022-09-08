@@ -29,6 +29,12 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>q", ":q!<CR>", opts)
 
+-- Fast navigation
+keymap("n", "J", "5j", opts)
+keymap("n", "K", "5k", opts)
+keymap("x", "J", "5j", opts)
+keymap("x", "K", "5k", opts)
+
 -- Resize with arrows ( overlap with OSX ) TODO: remove it
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -59,8 +65,8 @@ keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("n", "<c-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("n", "<c-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
@@ -135,5 +141,5 @@ keymap(
 
 -- copy reference
 keymap("n", "<leader>y", ":let @+=expand('%') . ':' . line('.')<CR>", opts)
-keymap("n", "<leader>yy", ":let @+=expand('%:p')", opts)
+keymap("n", "<leader>yy", ":let @+=expand('%:p')<CR>", opts)
 keymap("n", "<m-v>", "<cmd>lua require('lsp_lines').toggle()<cr>", opts)
