@@ -1,5 +1,9 @@
+local status_ok, symbols_outline = pcall(require, "symbols-outline")
+if not status_ok then
+  return
+end
 local icons = require "user.icons"
-vim.g.symbols_outline = {
+local opts = {
 	highlight_hovered_item = true,
 	show_guides = true,
 	auto_preview = false,
@@ -48,3 +52,4 @@ vim.g.symbols_outline = {
 		TypeParameter = { icon = icons.kind.TypeParameter, hl = "CmpItemKindTypeParameter" },
 	},
 }
+symbols_outline.setup(opts)
