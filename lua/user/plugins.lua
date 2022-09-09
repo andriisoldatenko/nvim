@@ -124,6 +124,13 @@ return packer.startup(function(use)
 	-- Rust
 	use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
 
+  -- Markdown
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  }
+
 	-- Fzf
 	use({
 		"ibhagwan/fzf-lua",
