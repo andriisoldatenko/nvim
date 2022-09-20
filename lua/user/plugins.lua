@@ -77,9 +77,8 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("ThePrimeagen/harpoon")
 	use("MattesGroeger/vim-bookmarks")
-	-- use("folke/todo-comments.nvim")
-  use("B4mbus/todo-comments.nvim")
-	use("goolord/alpha-nvim")
+	use("folke/todo-comments.nvim")
+use("goolord/alpha-nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/which-key.nvim")
 	use("ahmedkhalf/project.nvim")
@@ -104,7 +103,7 @@ return packer.startup(function(use)
 	--[[ use("rmagatti/session-lens") ]]
 
 	-- Colorschemes
-	use("ishan9299/nvim-solarized-lua")
+	use("andriisoldatenko/nvim-solarized-lua")
 
 	-- Status line
 	use("nvim-lualine/lualine.nvim")

@@ -73,3 +73,4 @@ TODO:
 - [ ] https://github.com/abecodes/tabout.nvim
 - [ ] https://github.com/ibhagwan/fzf-lua
 - [ ] https://github.com/kevinhwang91/nvim-bqf
+- [] https://github.com/nvim-neotest/neotest
