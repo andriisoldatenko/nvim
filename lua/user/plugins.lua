@@ -59,12 +59,12 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("ray-x/lsp_signature.nvim")
 	use("SmiteshP/nvim-navic")
-	use({"simrat39/symbols-outline.nvim", branch = "rework"})
+	use({ "simrat39/symbols-outline.nvim", branch = "rework" })
 	use("b0o/SchemaStore.nvim")
 	-- use "github/copilot.vim"
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
-	use({ "lvimuser/lsp-inlayhints.nvim"})
+	use({ "lvimuser/lsp-inlayhints.nvim" })
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Plugins
@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon")
 	use("MattesGroeger/vim-bookmarks")
 	use("folke/todo-comments.nvim")
-use("goolord/alpha-nvim")
+	use("goolord/alpha-nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/which-key.nvim")
 	use("ahmedkhalf/project.nvim")
@@ -97,7 +97,7 @@ use("goolord/alpha-nvim")
 	use("inkarkat/vim-ReplaceWithRegister")
 	use("godlygeek/tabular")
 	use("norcalli/nvim-colorizer.lua")
-  use "nvim-colortils/colortils.nvim"
+	use("nvim-colortils/colortils.nvim")
 	use("ghillb/cybu.nvim")
 	--[[ use("rmagatti/auto-session") ]]
 	--[[ use("rmagatti/session-lens") ]]
@@ -125,12 +125,12 @@ use("goolord/alpha-nvim")
 	-- Rust
 	use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
 
-  -- Markdown
-  use {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    ft = "markdown",
-  }
+	-- Markdown
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		ft = "markdown",
+	})
 
 	-- Fzf
 	use({

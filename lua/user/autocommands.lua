@@ -58,7 +58,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
       nnoremap <silent> <buffer> q :close<CR> 
       nnoremap <silent> <buffer> <c-j> j<CR> 
       nnoremap <silent> <buffer> <c-k> k<CR> 
-      set nobuflisted 
     ]]
     end
   end,
