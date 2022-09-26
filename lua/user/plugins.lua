@@ -103,7 +103,7 @@ return packer.startup(function(use)
 	--[[ use("rmagatti/session-lens") ]]
 
 	-- Colorschemes
-	use("andriisoldatenko/nvim-solarized-lua")
+	use("ishan9299/nvim-solarized-lua")
 
 	-- Status line
 	use("nvim-lualine/lualine.nvim")
