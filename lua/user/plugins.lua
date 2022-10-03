@@ -99,6 +99,8 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 	use("nvim-colortils/colortils.nvim")
 	use("ghillb/cybu.nvim")
+	use("dstein64/vim-startuptime")
+	use("takac/vim-hardtime")
 	--[[ use("rmagatti/auto-session") ]]
 	--[[ use("rmagatti/session-lens") ]]
 
@@ -175,6 +177,9 @@ return packer.startup(function(use)
 
 	-- plugin that peeks lines of the buffer in non-obtrusive way.
 	use("nacro90/numb.nvim")
+
+	-- folding
+	use("kalekundert/vim-coiled-snake")
 
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
