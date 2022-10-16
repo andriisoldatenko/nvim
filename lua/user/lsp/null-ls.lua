@@ -16,9 +16,12 @@ null_ls.setup {
     formatting.isort,
     formatting.stylua,
     formatting.shfmt,
+    formatting.gofumpt,
+    formatting.goimports,
     diagnostics.flake8,
     diagnostics.mypy,
     diagnostics.shellcheck,
+    diagnostics.golangci_lint,
   },
 }
 
