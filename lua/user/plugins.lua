@@ -101,6 +101,7 @@ return packer.startup(function(use)
 	use("ghillb/cybu.nvim")
 	use("dstein64/vim-startuptime")
 	use("takac/vim-hardtime")
+	use("dhruvasagar/vim-table-mode")
 	--[[ use("rmagatti/auto-session") ]]
 	--[[ use("rmagatti/session-lens") ]]
 
@@ -180,6 +181,14 @@ return packer.startup(function(use)
 
 	-- folding
 	use("kalekundert/vim-coiled-snake")
+
+	-- todo
+	use({
+		"glacambre/firenvim",
+		run = function()
+			vim.fn["firenvim#install"](0)
+		end,
+	})
 
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

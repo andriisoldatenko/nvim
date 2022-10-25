@@ -9,6 +9,9 @@ brew install fortune
 cargo install stylua
 ```
 
+Install Firenvim chrome plugin using [link](https://chrome.google.com/webstore/detail/firenvim/egpjdkipkomnmjhjmdamaniclmdlobbo)
+
+
 Make sure to remove or move your current `nvim` directory
 
 ```
