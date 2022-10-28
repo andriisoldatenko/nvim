@@ -158,6 +158,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	-- use("RRethy/nvim-treesitter-textsubjects")
+  use("Julian/vim-textobj-variable-segment")
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("drybalka/tree-climber.nvim")
 
