@@ -100,7 +100,8 @@ local function lsp_keymaps(bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>a", "<cmd>lua require'rust-tools'.hover_actions.hover_actions({bufnr = bufnr})<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ag", "<cmd>lua require'rust-tools'.code_action_group.code_action_group({bufnr = bufnr})<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
