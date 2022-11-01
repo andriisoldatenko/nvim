@@ -29,9 +29,9 @@ M.winbar_filetype_exclude = {
 }
 
 M.get_filename = function()
-  local filename = vim.fn.expand "%:t"
-  local extension = vim.fn.expand "%:e"
-  local f = require "user.functions"
+  local filename = vim.fn.expand("%:t")
+  local extension = vim.fn.expand("%:e")
+  local f = require("user.functions")
 
   if not f.isempty(filename) then
     local file_icon, file_icon_color =
@@ -108,7 +108,7 @@ M.get_winbar = function()
   if excludes() then
     return
   end
-  local f = require "user.functions"
+  local f = require("user.functions")
   local value = M.get_filename()
 
   local gps_added = false
@@ -120,7 +120,7 @@ M.get_winbar = function()
     end
   end
 
-  if not f.isempty(value) and f.get_buf_option "mod" then
+  if not f.isempty(value) and f.get_buf_option("mod") then
     local mod = "%#LspCodeLens#" .. require("user.icons").ui.Circle .. "%*"
     if gps_added then
       value = value .. " " .. mod
@@ -144,7 +144,7 @@ end
 
 M.create_winbar = function()
   vim.api.nvim_create_augroup("_winbar", {})
-  if vim.fn.has "nvim-0.8" == 1 then
+  if vim.fn.has("nvim-0.8") == 1 then
     vim.api.nvim_create_autocmd(
       { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
       {

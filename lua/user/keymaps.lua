@@ -9,6 +9,7 @@ local keymap = vim.api.nvim_set_keymap
 keymap("", ",", "<Nop>", opts)
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+vim.g.camelcasemotion_key = "\\"
 
 -- Modes
 --   normal_mode = "n",
@@ -89,10 +90,10 @@ keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 keymap("n", "<leader>/", ":execute 'Telescope live_grep default_text=' . expand('<cword>')<CR>", opts)
 
 keymap(
-	"n",
-	"<F6>",
-	[[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-	opts
+  "n",
+  "<F6>",
+  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
+  opts
 )
 keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
 keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
@@ -100,10 +101,10 @@ keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap(
-	"n",
-	"<C-p>",
-	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	opts
+  "n",
+  "<C-p>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  opts
 )
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
@@ -127,16 +128,16 @@ keymap("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 
 -- gitlinker
 keymap(
-	"n",
-	"<leader>gh",
-	'<cmd>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
-	{ silent = true }
+  "n",
+  "<leader>gh",
+  '<cmd>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
+  { silent = true }
 )
 keymap(
-	"v",
-	"<leader>gh",
-	'<cmd>lua require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
-	{}
+  "v",
+  "<leader>gh",
+  '<cmd>lua require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
+  {}
 )
 
 -- copy reference

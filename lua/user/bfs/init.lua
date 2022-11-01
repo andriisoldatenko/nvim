@@ -1,10 +1,10 @@
 -- TODO: scope open buffers to project
 
-require "split"
+require("split")
 
 local M = {}
 
-local config = require "user.bfs.config"
+local config = require("user.bfs.config")
 local keymaps = require("user.bfs.keymaps")
 
 M.bopen = {}
@@ -43,7 +43,7 @@ function M.selBufNum(win, opt, count)
   local filename = nil
 
   if count ~= 0 then
-    vim.notify "count wasn't 0, idk why"
+    vim.notify("count wasn't 0, idk why")
   else
     buf = vim.api.nvim_get_current_line()
     filename = buf:split(" ", true)[3]
@@ -56,7 +56,7 @@ function M.selBufNum(win, opt, count)
   M.close()
 
   if not filename then
-    print "Buffer number not found!"
+    print("Buffer number not found!")
     return
   end
 
@@ -115,7 +115,7 @@ M.set_buffers = function(buf)
     end
 
     local extension = ""
-    extension = filename:match "^.+(%..+)$"
+    extension = filename:match("^.+(%..+)$")
 
     if filename:sub(1, 7) == "term://" then
       M.terminal_count = M.terminal_count + 1
@@ -137,20 +137,14 @@ M.set_buffers = function(buf)
       end
     end
 
-    local file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color(
-      filename,
-      extension,
-      { default = true }
-    )
+    local file_icon, file_icon_color =
+      require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
 
     -- TODO: refactor this
     if filename:split(" ", true)[1] == "Terminal:" then
       hl_group = hl_group .. "term"
-      file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color(
-        "terminal",
-        extension,
-        { default = true }
-      )
+      file_icon, file_icon_color =
+        require("nvim-web-devicons").get_icon_color("terminal", extension, { default = true })
     end
 
     vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })

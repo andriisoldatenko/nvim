@@ -2,7 +2,7 @@ local ok, cybu = pcall(require, "cybu")
 if not ok then
   return
 end
-cybu.setup {
+cybu.setup({
   position = {
     relative_to = "win", -- win, editor, cursor
     anchor = "topright", -- topleft, topcenter, topright,
@@ -27,6 +27,6 @@ cybu.setup {
       colored = true, -- enable color for web dev icons
     },
   },
-}
+})
 vim.keymap.set("n", "H", "<Plug>(CybuPrev)")
 vim.keymap.set("n", "L", "<Plug>(CybuNext)")

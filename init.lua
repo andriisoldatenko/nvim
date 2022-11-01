@@ -29,7 +29,7 @@ require("user.illuminate")
 require("user.cybu")
 require("user.git-blame")
 require("user.symbol-outline")
-require("user.todo-comments")
+--[[ require("user.todo-comments") ]]
 -- require("user.hop")
 require("user.registers")
 require("user.functions")
