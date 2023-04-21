@@ -144,3 +144,10 @@ keymap(
 keymap("n", "<leader>y", ":let @+=expand('%') . ':' . line('.')<CR>", opts)
 keymap("n", "<leader>yy", ":let @+=expand('%:p')<CR>", opts)
 keymap("n", "<m-v>", "<cmd>lua require('lsp_lines').toggle()<cr>", opts)
+
+-- Navigate quickfix list with ease
+vim.api.nvim_set_keymap("n", "[q", "<cmd>:cprevious<cr>", { noremap = true, silent = true, nowait = true })
+vim.api.nvim_set_keymap("n", "]q", "<cmd>:cnext<cr>", { noremap = true, silent = true, nowait = true })
+
+keymap("n", "<C-n>", "<cmd>:cnext<cr>", opts)
+keymap("n", "<C-m>", "<cmd>:cprevious<cr>", opts)

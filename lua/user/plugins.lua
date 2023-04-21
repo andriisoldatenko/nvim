@@ -77,7 +77,8 @@ return packer.startup(function(use)
   use("akinsho/toggleterm.nvim")
   use("ThePrimeagen/harpoon")
   use("MattesGroeger/vim-bookmarks")
-  use("folke/todo-comments.nvim")
+  use({ "folke/todo-comments.nvim", branch = "neovim-pre-0.8.0" })
+  use("folke/trouble.nvim")
   use("goolord/alpha-nvim")
   use("lukas-reineke/indent-blankline.nvim")
   use("folke/which-key.nvim")
@@ -126,6 +127,8 @@ return packer.startup(function(use)
   use("L3MON4D3/LuaSnip") --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
   -- Golang
+  use("ray-x/go.nvim")
+  use("ray-x/guihua.lua") -- recommanded if need floating window support
 
   -- Rust
   use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
@@ -172,6 +175,11 @@ return packer.startup(function(use)
   })
   use("f-person/git-blame.nvim")
   use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+
+  -- Scroll bar
+  use("petertriho/nvim-scrollbar")
+  use("kevinhwang91/nvim-hlslens")
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
   -- Enables Vim to process line and column jump specifications in file paths
   use("wsdjeg/vim-fetch")

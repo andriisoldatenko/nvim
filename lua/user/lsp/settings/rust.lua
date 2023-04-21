@@ -57,7 +57,7 @@ return {
       highlight = "Comment",
     },
     hover_actions = {
-      auto_focus = false,
+      auto_focus = true,
       border = "rounded",
       width = 60,
       -- height = 30,
