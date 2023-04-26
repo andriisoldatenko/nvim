@@ -14,11 +14,6 @@ nvim_tree.setup({
   -- disable_netrw = true,
   -- hijack_netrw = true,
   -- open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -57,15 +52,6 @@ nvim_tree.setup({
     adaptive_size = true,
     hide_root_folder = false,
     side = "left",
-    -- auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-        { key = "h", cb = tree_cb("close_node") },
-        { key = "v", cb = tree_cb("vsplit") },
-      },
-    },
     number = false,
     relativenumber = false,
   },
