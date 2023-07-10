@@ -7,6 +7,7 @@ Prerequirements:
 ```
 brew install fortune
 cargo install stylua
+luarocks install luafilesystem
 ```
 
 Install Firenvim chrome plugin using [link](https://chrome.google.com/webstore/detail/firenvim/egpjdkipkomnmjhjmdamaniclmdlobbo)

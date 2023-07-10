@@ -63,7 +63,7 @@ return packer.startup(function(use)
   use("b0o/SchemaStore.nvim")
   -- use "github/copilot.vim"
   use("RRethy/vim-illuminate")
-  use("j-hui/fidget.nvim")
+  use({"j-hui/fidget.nvim", branch = "legacy"})
   use({ "lvimuser/lsp-inlayhints.nvim" })
   use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
