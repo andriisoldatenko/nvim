@@ -1,9 +1,13 @@
-local colorscheme = "solarized-flat"
+local M = {
+  -- "LunarVim/primer.nvim",
+  "LunarVim/darkplus.nvim",
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  priority = 1000, -- make sure to load this before all the other start plugins
+}
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
+function M.config()
+  -- vim.cmd.colorscheme "primer_dark"
+  vim.cmd.colorscheme "darkplus"
 end
 
-vim.g.solarized_statusline = "flat"
+return M

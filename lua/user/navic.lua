@@ -1,41 +1,59 @@
-local status_ok, navic = pcall(require, "nvim-navic")
-if not status_ok then
-  return
-end
+local M = {
+  "SmiteshP/nvim-navic",
+}
 
-local icons = require("user.icons")
-
-navic.setup({
-  icons = {
-    File = " ",
-    Module = " ",
-    Namespace = " ",
-    Package = " ",
+function M.config()
+  local kinds = {
+    Array = " ",
+    Boolean = " ",
     Class = " ",
-    Method = " ",
-    Property = " ",
-    Field = " ",
+    Color = " ",
+    Constant = " ",
     Constructor = " ",
     Enum = " ",
-    Interface = " ",
-    Function = " ",
-    Variable = " ",
-    Constant = " ",
-    String = " ",
-    Number = " ",
-    Boolean = " ",
-    Array = " ",
-    Object = " ",
-    Key = " ",
-    Null = " ",
     EnumMember = " ",
-    Struct = " ",
     Event = " ",
+    Field = " ",
+    File = " ",
+    Folder = "󰉋 ",
+    Function = " ",
+    Interface = " ",
+    Key = " ",
+    Keyword = " ",
+    Method = " ",
+    -- Module = " ",
+    Module = " ",
+    Namespace = " ",
+    Null = "󰟢 ",
+    Number = " ",
+    Object = " ",
     Operator = " ",
+    Package = " ",
+    Property = " ",
+    Reference = " ",
+    Snippet = " ",
+    String = " ",
+    Struct = " ",
+    Text = " ",
     TypeParameter = " ",
-  },
-  highlight = true,
-  separator = " " .. icons.ui.ChevronRight .. " ",
-  depth_limit = 0,
-  depth_limit_indicator = "..",
-})
+    Unit = " ",
+    Value = " ",
+    Variable = " ",
+  }
+
+  local icons = require "user.icons"
+
+  require("nvim-navic").setup {
+    icons = kinds,
+    highlight = true,
+    lsp = {
+      auto_attach = true,
+    },
+    click = true,
+    separator = " " .. icons.ui.ChevronRight .. " ",
+    depth_limit = 0,
+    depth_limit_indicator = "..",
+  }
+end
+
+return M
