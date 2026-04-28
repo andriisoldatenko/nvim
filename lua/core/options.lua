@@ -1,8 +1,8 @@
 -- ============================================================================
 -- Leader Keys
 -- ============================================================================
-vim.g.mapleader = " "      -- Set space as the leader key for custom mappings
-vim.g.maplocalleader = " " -- Set space as the local leader key for buffer-local mappings
+vim.g.mapleader = ","      -- Set , as the leader key for custom mappings
+vim.g.maplocalleader = "," -- Set , as the local leader key for buffer-local mappings
 
 -- ============================================================================
 -- Disable Built-in Plugins
