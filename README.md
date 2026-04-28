@@ -1,19 +1,60 @@
 # My Neovim config written in Lua
 
-## Try out this config
+---
 
+## Installation
 
-Prerequirements:
+### 1. Prerequirements:
 ```
+brew install neovim
+brew install git
+brew install ripgrep
+brew install fd
+brew install lazygit
+brew install stow
 brew install fortune
+brew install cargo-binstall
 cargo install stylua
+cargo binstall tree-sitter-cli
 luarocks install luafilesystem
 ```
 
-Install Firenvim chrome plugin using [link](https://chrome.google.com/webstore/detail/firenvim/egpjdkipkomnmjhjmdamaniclmdlobbo)
+### 2. Fonts (Required)
 
 
-Make sure to remove or move your current `nvim` directory
+Install a [Nerd Font](https://www.nerdfonts.com/) for icons:
+
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+# or
+brew install --cask font-fira-code-nerd-font
+```
+Then set your terminal to use the installed font.
+
+
+### 3. Language Toolchains
+
+```bash
+# Go
+brew install go
+# After install, run :GoInstallBinaries in nvim
+
+# Lua (for luarocks, optional)
+brew install lua luarocks
+```
+
+### 4. Optional Dependencies
+
+```bash
+# Markdown preview (browser-based)
+# markdown-preview.nvim will auto-install, but needs npm
+```
+
+
+### 5. Clone and Start
+
+> [!WARNING:]
+> Make sure to remove or move your current `nvim` directory
 
 ```
 git clone https://github.com/andriisoldatenko/nvim ~/fan/nvim
@@ -24,57 +65,37 @@ brew install stow
 
 stow nvim -t $HOME/.config/nvim/
 ```
-Run `nvim` and wait for the plugins to be installed 
 
+### 6. Post install steps
 
-**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
+Run `nvim`:
 
-## Get healthy
+```bash
+" Wait for lazy.nvim to finish installing plugins, then:
 
-Open `nvim` and enter the following:
+" Generate help tags
+:helptags ALL
 
+" Install treesitter parsers (auto-installs, but can force)
+:TSUpdate
+
+" Check health
+:checkhealth
+
+" For Go development
+:GoInstallBinaries
+
+" Build markdown-preview (if not auto-built)
+:Lazy build markdown-preview.nvim
 ```
+
+### 7. Verify installation
+
+```vim
 :checkhealth
 ```
 
-Migrate existing plugins to lua:
-
-## Plugins
-- File navigation with nvim-tree.lua
-- Managing tabs, buffers with bufferline.nvim
-- Beautiful and configurable icons with nvim-web-devicons
-- Git diffs and more with gitsigns.nvim
-- NeoVim Lsp configuration with nvim-lspconfig and lsp-installer
-- Autocompletion with nvim-cmp
-- File searching, previewing image and text files and more with telescope.nvim.
-- Syntax highlighting with nvim-treesitter
-- Autoclosing braces and html tags with nvim-autopairs
-- Indentlines with indent-blankline.nvim
-- Useful snippets with friendly snippets + LuaSnip.
-- Popup mappings keysheet whichkey.nvim
-
-### Spelling
-
-More details you can find [here](https://neovim.io/doc/user/spell.html)
-
-TODO:
-- [x] Open line in Github (https://github.com/ruifm/gitlinker.nvim).
-- [x] highlight line number when chnage line.
-- [ ] https://github.com/wellle/targets.vim
-- [ ] review lazy loading https://github.com/NvChad/NvChad
-- [ ] review https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#highlight-symbol-under-cursor
-- [ ] review https://github.com/Civitasv/runvim
-- [ ] https://github.com/luukvbaal/stabilize.nvim
-
-- [ ] https://github.com/Saecki/crates.nvim (Rust)
-- [ ] https://github.com/gbprod/cutlass.nvim
-- [ ] https://github.com/monaqa/dial.nvim
-- [ ] stevearc/dressing.nvim
-- [ ] https://github.com/j-hui/fidget.nvim
-- [ ] https://github.com/unblevable/quick-scope
-- [ ] https://github.com/tiagovla/scope.nvim
-- [ ] https://github.com/stevearc/stickybuf.nvim
-- [ ] https://github.com/abecodes/tabout.nvim
-- [ ] https://github.com/ibhagwan/fzf-lua
-- [ ] https://github.com/kevinhwang91/nvim-bqf
-- [] https://github.com/nvim-neotest/neotest
+All checks should pass. Common fixes:
+- Missing CLI tools: `brew install <tool>`
+- Treesitter errors: `:TSUpdate`
+- LSP not working: `:LspInfo` and `:Mason`
