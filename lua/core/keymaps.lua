@@ -74,7 +74,12 @@ vim.keymap.set("v", "p", '"_dP', { desc = "Paste (no yank)" })
 vim.keymap.set("n", "YY", "va{Vy", { desc = "Yank Block {}" })
 
 -- Split line (opposite of J)
-vim.keymap.set("n", "X", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { desc = "Split Line", silent = true })
+vim.keymap.set(
+  "n",
+  "X",
+  ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>",
+  { desc = "Split Line", silent = true }
+)
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select All" })
@@ -95,3 +100,13 @@ vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go Left" })
 vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go Down" })
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go Up" })
 vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go Right" })
+
+vim.keymap.set("i", "<Up>", "<Nop>")
+vim.keymap.set("i", "<Down>", "<Nop>")
+vim.keymap.set("i", "<Left>", "<Nop>")
+vim.keymap.set("i", "<Right>", "<Nop>")
+
+vim.keymap.set({ "n", "v", "o" }, "<Up>", "<Nop>")
+vim.keymap.set({ "n", "v", "o" }, "<Down>", "<Nop>")
+vim.keymap.set({ "n", "v", "o" }, "<Left>", "<Nop>")
+vim.keymap.set({ "n", "v", "o" }, "<Right>", "<Nop>")
